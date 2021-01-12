@@ -23,9 +23,23 @@ Observer Pattern 설명 및 예제 레포지토리입니다.
 ![ObserverPattern_pic3](https://upload.wikimedia.org/wikipedia/commons/0/01/W3sDesign_Observer_Design_Pattern_UML.jpg)
 
 이 패턴은 분산 이벤트 핸들링 시스템, MVC 패턴, 안드로이드-OnClickListener, 안드로이드-LiveData 등에서 사용되고 있다.
-
 ### SOLID
 옵저버는 서브젝트에 update API만 제공한다. 서브젝트는 옵저버가 특정 인터페이스를 구현한다는 정보만 가지고있다.
 따라서, 옵저버는 언제든 추가, 제거를 할 수 있다. 또, 새로운 형식의 옵저버가 추가되어도 서브젝트에 전혀 영향을 주지 않는 느슨한 결합을 갖고있다.
 
 이는 SOLID 원칙의 OCP, LSP, DIP를 만족한다!
+## ObserverPattern 예제
+_헤드 퍼스트 디자인패턴 책에서 참고한 예제입니다._
+### 문제
+> 날씨 정보가 바뀌면 각 방송사가 이를 방송하도록 하라
+### 역할
+- Subject
+  - 날씨 상태를 가짐
+  - Observer 리스트를 가짐
+- Observer
+  - 각 방송사로, Subject를 구독
+  - 상태변화 observe 시 방송
+### 결과
+![ObserverPattern_pic4](https://media.vlpt.us/images/cchloe2311/post/34fc6b2a-f4cc-45ec-9022-00c4a7ed9f02/image.png)
+
+날씨정보 변경 시, 각 방송사가 이를 observe해 방송하는 것을 확인
